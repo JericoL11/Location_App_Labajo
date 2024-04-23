@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    
+    <FrameLayout
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+   
+        <!--nav-->
+    
+
+
+        <!--map-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="70dp"
+            android:clickable="true"
+            android:id="@+id/placeLayout">
+
+
+            <ImageView
+                android:src="@drawable/dot"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/blueball" />
+
+            <TextView
+                android:text="Where to?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/blueball"
+                android:id="@+id/placeTextView"
+                android:layout_marginLeft="12.5dp" />
+         
+        </RelativeLayout>
+       
+        
+            <ImageButton
+            android:background="@drawable/location"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:id="@+id/imageButton1" />
+
+       
+
+   
+
+             <ImageView
+                android:src="@drawable/target"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|right"
+                android:layout_marginLeft="16dp"
+                android:tint="@color/colorAccent"
+                android:id="@+id/locationButton" />
+
+       
+            <Button
+            android:text="Get Directions"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:layout_gravity="center|bottom"
+            android:paddingLeft="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:translationZ="2dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#ff9130"
+            android:id="@+id/getDirectionButton" />
+    </FrameLayout>
+
+
+
+</RelativeLayout>
