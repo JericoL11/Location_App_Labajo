@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    
     <FrameLayout
              android:layout_width="fill_parent"
              android:layout_height="fill_parent">
-   
-        <!--nav-->
-    
-
 
         <!--map-->
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.SupportMapFragment"/>
+         
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -55,9 +55,6 @@
             android:layout_gravity="center"
             android:id="@+id/imageButton1" />
 
-       
-
-   
 
              <ImageView
                 android:src="@drawable/target"
@@ -89,4 +86,4 @@
 
 
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
