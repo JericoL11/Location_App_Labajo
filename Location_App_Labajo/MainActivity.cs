@@ -1,6 +1,8 @@
 ﻿using Android;
 using Android.App;
+using Android.Gms.Location;
 using Android.Gms.Maps;
+using Android.Gms.Maps.Model;
 using Android.OS;
 using Android.Runtime;
 using AndroidX.AppCompat.App;
@@ -17,8 +19,6 @@ namespace Location_App_Labajo
           Manifest.Permission.AccessCoarseLocation,
           Manifest.Permission.AccessFineLocation
         };
-
-     
         //object for googlemaps
         GoogleMap map;
 
@@ -47,12 +47,13 @@ namespace Location_App_Labajo
 
         public void OnMapReady(GoogleMap googleMap)
         {
+            var mapStyle = MapStyleOptions.LoadRawResourceStyle
+                (this, Resource.Raw.mapstyle);
+            googleMap.SetMapStyle(mapStyle);
+
             map = googleMap;
 
             map.UiSettings.ZoomControlsEnabled = true;
         }
-
-
-   
     }
 }
