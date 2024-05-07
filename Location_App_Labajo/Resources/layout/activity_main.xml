@@ -51,21 +51,20 @@
        
         
             <ImageButton
-            android:background="@drawable/location"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:id="@+id/imageButton1" />
+            android:background="@drawable/target"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="16dp"
+            android:id="@+id/locationButton" />
 
 
              <ImageView
-                android:src="@drawable/target"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center|right"
-                android:layout_marginLeft="16dp"
-                android:tint="@color/colorAccent"
-                android:id="@+id/locationButton" />
+                android:src="@drawable/location"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"     
+                android:id="@+id/locationPin" />
 
        
             <Button

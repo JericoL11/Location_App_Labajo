@@ -14,7 +14,7 @@ namespace Location_App_Labajo
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.2.120")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.0.99")]
 	public partial class Resource
 	{
 		
@@ -4002,43 +4002,43 @@ namespace Location_App_Labajo
 			public const int image = 2131230848;
 			
 			// aapt resource value: 0x7F080081
-			public const int imageButton1 = 2131230849;
+			public const int info = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int info = 2131230850;
+			public const int italic = 2131230850;
 			
 			// aapt resource value: 0x7F080083
-			public const int italic = 2131230851;
+			public const int item_touch_helper_previous_elevation = 2131230851;
 			
 			// aapt resource value: 0x7F080084
-			public const int item_touch_helper_previous_elevation = 2131230852;
+			public const int labeled = 2131230852;
 			
 			// aapt resource value: 0x7F080085
-			public const int labeled = 2131230853;
+			public const int largeLabel = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int largeLabel = 2131230854;
+			public const int left = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int left = 2131230855;
+			public const int light = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int light = 2131230856;
+			public const int line1 = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int line1 = 2131230857;
+			public const int line3 = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int line3 = 2131230858;
+			public const int listMode = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int listMode = 2131230859;
+			public const int list_item = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int list_item = 2131230860;
+			public const int locationButton = 2131230860;
 			
 			// aapt resource value: 0x7F08008D
-			public const int locationButton = 2131230861;
+			public const int locationPin = 2131230861;
 			
 			// aapt resource value: 0x7F08008E
 			public const int map = 2131230862;
