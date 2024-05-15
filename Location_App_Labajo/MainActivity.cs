@@ -3,11 +3,15 @@ using Android.App;
 using Android.Gms.Location;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using Android.Locations;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
+using AndroidX.Annotations;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.App;
+using Location_App_Labajo.Helpers;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Location_App_Labajo
@@ -15,7 +19,7 @@ namespace Location_App_Labajo
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, IOnMapReadyCallback
     {
-
+        TextView placeTextView;
         ImageButton locationButton;
         ImageView locationPin;
 
@@ -33,7 +37,9 @@ namespace Location_App_Labajo
         Android.Locations.Location myLastLocation;
         private LatLng myPosition;
 
-
+        MapHelpers mapHelper = new MapHelpers();
+        IList<Address> addresses = new List<Address>();
+        Geocoder geocoder;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -53,7 +59,7 @@ namespace Location_App_Labajo
 
             locationButton = FindViewById<ImageButton>(Resource.Id.locationButton);
             locationPin = FindViewById<ImageView>(Resource.Id.locationPin);
-
+            placeTextView = (TextView)FindViewById(Resource.Id.placeTextView);
             locationButton.Click += LocationButton_Click;
         }
 
@@ -91,7 +97,8 @@ namespace Location_App_Labajo
             googleMap.SetMapStyle(mapStyle);
 
             map = googleMap;
-
+            map.CameraMoveStarted += Map_CameraMoveStarted;
+            map.CameraIdle += Map_CameraIdle;
             map.UiSettings.ZoomControlsEnabled = true;
 
 
@@ -101,6 +108,45 @@ namespace Location_App_Labajo
             }
 
         }
+       
+        private async void Map_CameraIdle(object sender, System.EventArgs e)
+        {
+
+
+            var position = map.CameraPosition.Target;
+            geocoder = new Geocoder(this);
+            addresses = await geocoder.GetFromLocationAsync(position.Latitude, position.Longitude, 1);
+
+            if (addresses != null && addresses.Count >0)
+            {
+                Address addresss = addresses[0];
+                string formattedAddress = addresss.GetAddressLine(0);
+                placeTextView.Text = formattedAddress.ToUpper();
+            }
+            else
+            {
+                placeTextView.Text = "Where to?";
+            }
+           /* string key = Resources.GetString(Resource.String.mapkey);
+            string address = await mapHelper.FindCordinateAddress(  position, key);
+            placeTextView.Text = address;
+
+            if (!string.IsNullOrEmpty(address))
+            {
+                placeTextView.Text = address;
+            }
+            else
+            {
+                placeTextView.Text = "Where to?";
+            }*/
+        }
+
+        private void Map_CameraMoveStarted(object sender, GoogleMap.CameraMoveStartedEventArgs e)
+        {
+           
+            placeTextView.Text = "Setting new location";
+        }
+
         bool checKPermission()
         {
             bool permissionGranted = false;
